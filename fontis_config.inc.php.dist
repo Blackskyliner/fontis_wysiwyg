@@ -1,5 +1,7 @@
 <?php
 
 return array(
-    'magento_root' => __DIR__.'/../htdocs/',
+    // Assumption for default configuration: this file is located within the magento root folder
+    // You may need to adjust this if you use modman or composer
+    'magento_root' => realpath(__DIR__),
 );
