@@ -54,7 +54,7 @@ function getMagentoBackendSession() {
 }
 
 function initializeMagento() {
-    if(stristr(PHP_OS, 'WIN')){
+    if(strpos(strtoupper(PHP_OS), 'WIN') !== false){
         echo 'Not tested on Windows paths (could result in endless loop).';
         exit;
     }
