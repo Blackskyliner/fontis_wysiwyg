@@ -63,7 +63,7 @@
                         </editable_areas>
                         <editable_areas_custom translate="comment">
                             <label></label>
-                            <frontend_model>fontis_wysiwyg_block_textareas</frontend_model>
+                            <frontend_model>Fontis_Wysiwyg_Block_Textareas</frontend_model>
                             <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
                             <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
