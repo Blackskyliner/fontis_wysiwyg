@@ -55,6 +55,11 @@ function getMagentoBackendSession() {
 
 function adapter_magento(){
     // Load configuration
+    $PATH = realpath(__DIR__.'/../../../../..');
+    if (!file_exists($PATH.'/fontis_config.inc.php')) {
+        echo 'Could not find "fontis_config.inc.php". \n<br/>Searchpath: '.$PATH;
+        exit;
+    }
     $CONFIG = require(__DIR__.'/../../../../../fontis_config.inc.php');
 
     // Initialize Magento
