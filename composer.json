@@ -1,0 +1,11 @@
+{
+    "name": "fontis/fontis_wysiwyg",
+    "type": "magento-module",
+    "description":"This extension gives you the option to add a JavaScript WYSIWYG editor to specified admin page text areas.",
+    "authors":[
+        {
+            "name":"Chris Norton",
+            "email":"chris.norton@fontis.com.au"
+        }
+    ]
+}
