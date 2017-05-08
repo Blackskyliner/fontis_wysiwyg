@@ -67,6 +67,8 @@ function initializeMagento() {
             require_once($CONFIG['magento_root'].'/app/bootstrap.php');
             require_once(realpath($CONFIG['magento_root'].'/app/Mage.php'));
             umask(0);
+
+            return;
         }
         $PATH = realpath($PATH.'/..');
     }
