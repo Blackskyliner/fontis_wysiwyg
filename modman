@@ -3,4 +3,4 @@ app/etc/modules/*                                     app/etc/modules/
 app/design/adminhtml/default/default/layout/*         app/design/adminhtml/default/default/layout/
 app/design/adminhtml/default/default/template/fontis  app/design/adminhtml/default/default/template/fontis
 js/fontis                                             js/fontis
-fontis_config.inc.dist                                fontis_config.inc.php
+fontis_config.inc.php.dist                            fontis_config.inc.php
