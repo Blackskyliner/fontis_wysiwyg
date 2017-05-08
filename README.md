@@ -5,7 +5,6 @@ Adds a chosen JavaScript WYSIWYG editor to selected admin pages.
 
 This extension gives you the option to add a JavaScript WYSIWYG editor to specified admin page text areas. Currently available editors are:
 
-* [TinyMCE](http://tinymce.moxiecode.com/)
 * [FCKeditor](http://www.fckeditor.net/)
 * [CKeditor](http://ckeditor.com/) (preliminary support)
 

@@ -154,65 +154,6 @@
                         </customconfigjs>
                     </fields>
                 </fckeditor>
-                <tinymce>
-                    <label>TinyMCE Settings</label>
-                    <sort_order>3</sort_order>
-                    <show_in_default>1</show_in_default>
-                    <show_in_website>1</show_in_website>
-                    <show_in_store>0</show_in_store>
-                    <fields>
-                        <language translate="label">
-                            <label>Language</label>
-                            <frontend_type>select</frontend_type>
-                            <source_model>fontis_wysiwyg/source_TinyMCELanguage</source_model>
-                            <sort_order>1</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                        </language>
-                        <theme translate="label">
-                            <label>Theme</label>
-                            <frontend_type>select</frontend_type>
-                            <source_model>fontis_wysiwyg/source_TinyMCETheme</source_model>
-                            <sort_order>2</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                        </theme>
-                        <usecustomconfig translate="label">
-                            <label>Use Custom Configuration</label>
-                            <comment>Select yes to select plugins and enter your own custom configuration JavaScript. If not, the Plugins and Custom Configuration Javascript sections below will be ignored and default values will be used.</comment>
-                            <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_yesno</source_model>
-                            <sort_order>3</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                        </usecustomconfig>
-                        <plugins translate="label">
-                            <label>Plugins</label>
-                            <comment>If any plugins selected here provide new toolbar buttons, they will need to be added using the appropriate theme_advanced_buttons option in the Custom Configuration JavaScript section below.</comment>
-                            <frontend_type>multiselect</frontend_type>
-                            <source_model>fontis_wysiwyg/source_TinyMCEPlugins</source_model>
-                            <sort_order>4</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                        </plugins>
-                        <customconfigjs translate="label">
-                            <label>Custom Configuration JavaScript</label>
-                            <comment>Enter your custom configuration JavaScript here.</comment>
-                            <frontend_type>textarea</frontend_type>
-                            <sort_order>5</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>0</show_in_website>
-                        </customconfigjs>
-                        <!--<fckeditor_customtoolbarjs translate="label">
-                            <label>FCKeditor Custom Toolbar Set</label>
-                            <comment>Enter your custom toolbar JavaScript code here if you selected 'Custom' above.</comment>
-                            <frontend_type>textarea</frontend_type>
-                            <sort_order>7</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                        </fckeditor_customtoolbarjs>-->
-                    </fields>
-                </tinymce>
             </groups>
         </fontis_wysiwyg>
     </sections>

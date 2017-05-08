@@ -215,11 +215,6 @@
                     if(fck_editor_element) {
                         fck_editor_element.contentWindow.location.reload(true);
                     }
-                   <?php } else if($editorType == 'tinymce') { ?>
-                    var textarea = document.getElementById('template_text');
-                    if(textarea) {
-                        tinyMCE.execCommand('mceAddControl',false,'template_text');
-                    }
                    <?php } ?>
                }.bind(this)
             });

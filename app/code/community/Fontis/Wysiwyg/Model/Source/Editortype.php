@@ -25,7 +25,6 @@ class Fontis_Wysiwyg_Model_Source_Editortype
     public function toOptionArray()
     {
         return array(
-            array('value' => 'tinymce', 'label' => 'TinyMCE'),
             array('value' => 'fckeditor', 'label' => 'FCKeditor'),
             array('value' => 'ckeditor', 'label' => 'CKeditor (FCK v3)'),
             array('value' => 'disabled', 'label' => 'Disable WYSIWYG editor'),
