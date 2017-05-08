@@ -210,7 +210,7 @@
                           }
                        }.bind(this));
                    }
-                   <?php if($editorType == 'fckeditor' || $editorType == 'ckeditor') { ?>
+                   <?php if($editorType == 'ckeditor') { ?>
                     var fck_editor_element = document.getElementById('template_text___Frame');
                     if(fck_editor_element) {
                         fck_editor_element.contentWindow.location.reload(true);

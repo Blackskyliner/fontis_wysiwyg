@@ -49,38 +49,10 @@
     <default>
         <fontis_wysiwyg>
             <general>
-                <editor_type>fckeditor</editor_type>
+                <editor_type>ckeditor</editor_type>
                 <editable_areas>description,short_description,page_content,block_content,_generaldescription,text,template_text</editable_areas>
                 <upload_path>media/upload</upload_path>
             </general>
-            <fckeditor>
-                <language>auto</language>
-                <toolbarset>Default</toolbarset>
-                <skin>default</skin>
-                <usecustomtoolbarjs>0</usecustomtoolbarjs>
-                <customtoolbarjs><![CDATA[FCKConfig.ToolbarSets["Custom"] = [['Source', '-', 'Cut','Copy','Paste','PasteText','PasteWord'],
-    ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
-    '/',
-    ['Bold','Italic','Underline','StrikeThrough','-', 'OrderedList','UnorderedList'],
-    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
-    ['Image','Table','Rule','-','Link','Unlink','Anchor','-','FontFormat']
-    ];
-]]></customtoolbarjs>
-                <usecustomconfigjs>0</usecustomconfigjs>
-                <customconfigjs><![CDATA[FCKConfig.ProcessHTMLEntities = false;
-FCKConfig.FormatSource = false;
-FCKConfig.FormatOutput = false;
-FCKConfig.ProtectedSource.Add(/{{[\s\S]*?}}/g)]]></customconfigjs>
-            </fckeditor>
-            <tinymce>
-                <language>en</language>
-                <theme>advanced</theme>
-                <usecustomconfig>0</usecustomconfig>
-                <plugins>ibrowser,magento</plugins>
-                <customconfigjs><![CDATA[theme_advanced_buttons3_add : "ibrowser",
-magento_fix_quote: true,
-magento_fix_nl2br: true]]></customconfigjs>
-            </tinymce>
         </fontis_wysiwyg>
     </default>
     <adminhtml>

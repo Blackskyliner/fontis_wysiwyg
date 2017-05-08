@@ -51,59 +51,7 @@
         }
     }
 ?>
-<?php if($editorType == 'fckeditor') { ?>
-    <?php $toolbarSet = Mage::getStoreConfig('fontis_wysiwyg/fckeditor/toolbarset'); ?>
-    
-    <script type="text/javascript" src="<?php echo $this->getJsUrl() ?>fontis/fckeditor/fckeditor.js"></script>
-    <script type="text/javascript">
-    window.onload = function()
-    {
-        function applyFCKEditor() {
-            var editable_areas = '<?php echo $editableAreas ?>';
-            <?php /* Add FCKeditor to any matching textareas. */ ?>
-            editable_areas.split(',').each(function(dom_id) {
-                if($(dom_id)) {
-                    <?php /* Remove the required-entry CSS class so Magento will
-                             allow the contents of the editor to be submitted. */ ?>
-                    var loopCheck = 0;
-                    while($(dom_id).hasClassName('required-entry') && loopCheck < 10) {
-                        $(dom_id).removeClassName('required-entry');
-                        loopCheck += 1;
-                    }
-                    
-                    var fck = new FCKeditor(dom_id);
-                    <?php $language = Mage::getStoreConfig('fontis_wysiwyg/fckeditor/language'); ?>
-                    <?php if($language && $language != 'auto') { ?>
-                    fck.Config["AutoDetectLanguage"] = false;
-                    fck.Config["DefaultLanguage"] = "<?php echo Mage::getStoreConfig('fontis_wysiwyg/fckeditor/language') ?>";
-                    <?php } ?>
-
-                    fck.Config["CustomConfigurationsPath"] = "<?php echo $this->getJsUrl() ?>fontis/fckeditor/fontis_custom_config.php";
-                    fck.Config["SkinPath"] = "skins/<?php echo Mage::getStoreConfig('fontis_wysiwyg/fckeditor/skin') ?>/";
-                    fck.BasePath = "<?php echo $this->getJsUrl() ?>fontis/fckeditor/";
-                    fck.Width = '640';
-                    fck.Height = '450';
-                    
-                    <?php /* Set the toolbarset. */ ?>
-                    <?php if($toolbarSet) { ?>
-                        fck.ToolbarSet = '<?php echo $toolbarSet ?>';
-                    <?php } ?>
-                    
-                    fck.ReplaceTextarea();
-                }
-            });
-        }
-        
-        <?php /* Apply FCKeditor via showTab event if it exists, otherwise load it now */ ?>
-        if ($("category_edit_form")) {
-            varienGlobalEvents.attachEventHandler('showTab', applyFCKEditor);
-        } else {
-            applyFCKEditor();
-        }
-    }
-    </script>
-
-<?php } else if($editorType == 'ckeditor') { ?>
+<?php if($editorType == 'ckeditor') { ?>
     <script type="text/javascript" src="<?php echo $this->getJsUrl() ?>fontis/ckeditor/ckeditor.js"></script>
     <script type="text/javascript">
     window.onload = function()
