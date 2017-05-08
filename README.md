@@ -20,6 +20,6 @@ You can install this module in 3 ways:
 - Modman
 - Composer
 
-After installing this module manually ot via composer you will need to copy and configure the `fontis_config.inc.php.dist` to `fontis_config.inc.php`.
-Default path within the .dist file should work with modman and composer installations. If not configured correctly the image uploader will not work.
+After installing this module you will need to copy and configure the `vendor/fontis/fontis_wysiwyg/fontis_config.inc.php.dist` to `path/to/mageroot/fontis_config.inc.php`.
+Default path within the .dist file should work most installations. If not configured correctly the image uploader will not work.
 If you don't want to use the image uploader then you can just ignore this step.
