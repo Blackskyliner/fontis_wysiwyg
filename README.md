@@ -16,10 +16,36 @@ Installation
 
 You can install this module in 3 ways:
 
-- Manually
+- Manually (latest master/development snapshot)
+
+    `wget wget -qO- https://github.com/Blackskyliner/fontis_wysiwyg/archive/master.tar.gz | tar xvz -C /path/to/your/mangento/installation`
+
 - Modman
+
+    `modman clone git@github.com:Blackskyliner/fontis_wysiwyg.git`
+
 - Composer
 
-After installing this module you will need to copy and configure the `vendor/fontis/fontis_wysiwyg/fontis_config.inc.php.dist` to `path/to/mageroot/fontis_config.inc.php`.
-Default path within the .dist file should work most installations. If not configured correctly the image uploader will not work.
-If you don't want to use the image uploader then you can just ignore this step.
+    `composer require fontis/fontis_wysiwyg`
+
+Configuration
+=============
+To use the upload funciionallity you will need to configure the magento root within the `fontis_config.inc.php`.
+A Template for that file is available as `fontis_config.inc.php.dist`.
+The Filebrowser tries to load the first `fontis_config.inc.php` file if finds while traversing the path upwards.
+
+Example for configuration search traversal:
+
+- Magento Installed to: /var/www/vhosts/yourdomain.tld/htdocs
+- Composer is also initialited within the magento directory thus /var/www/vhosts/yourdomain.tld/htdocs/vendor is the composer vendor directory
+- Uploaderscript will search in: 
+    - /var/www/vhosts/yourdomain.tld/htdocs/vendor/fontis/fontis_wysiwyg
+    - /var/www/vhosts/yourdomain.tld/htdocs/vendor/fontis
+    - /var/www/vhosts/yourdomain.tld/htdocs/vendor
+    - /var/www/vhosts/yourdomain.tld/htdocs
+    - /var/www/vhosts/yourdomain.tld
+    - /var/www/vhosts
+    - /var/www
+    - /var
+    - /
+- The fontis_config.inc.php should in this setup reside within /var/www/vhosts/yourdomain.tld/htdocs (rule of thumb always store that configuration file beside the vendor directory and it will be found, same applies to manual and modman installations)

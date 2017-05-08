@@ -53,20 +53,30 @@ function getMagentoBackendSession() {
     return $session;
 }
 
-function adapter_magento(){
-    // Load configuration
-    $PATH = realpath(__DIR__.'/../../../../..');
-    if (!file_exists($PATH.'/fontis_config.inc.php')) {
-        echo 'Could not find "fontis_config.inc.php". \n<br/>Searchpath: '.$PATH;
+function initializeMagento() {
+    if(stristr(PHP_OS, 'WIN')){
+        echo 'Not tested on Windows paths (could result in endless loop).';
         exit;
     }
-    $CONFIG = require(__DIR__.'/../../../../../fontis_config.inc.php');
+    // Preeseed some iterations as we can safely start in our plugins root directory.
+    $STARTING_PATH = $PATH = realpath(__DIR__.'/../../../../..');
+    while ($PATH !== '/') {
+        if (file_exists($PATH.'/fontis_config.inc.php')) {
+            $CONFIG = require($PATH.'/fontis_config.inc.php');
+            // Initialize Magento
+            require_once($CONFIG['magento_root'].'/app/bootstrap.php');
+            require_once(realpath($CONFIG['magento_root'].'/app/Mage.php'));
+            umask(0);
+        }
+        $PATH = realpath($PATH.'/..');
+    }
 
-    // Initialize Magento
-    require_once($CONFIG['magento_root'].'/app/bootstrap.php');
-    require_once(realpath($CONFIG['magento_root'].'/app/Mage.php'));
-    umask(0);
+    echo 'Could not find "fontis_config.inc.php" within the whole tree starting from '.$STARTING_PATH;
+    exit;    
+}
 
+function adapter_magento(){
+    initializeMagento();
     $session = getMagentoBackendSession();
     $docRoot = getenv('DOCUMENT_ROOT');
     $magentoBase = str_replace($docRoot, '', Mage::getBaseDir());
