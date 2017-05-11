@@ -7,6 +7,15 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
-	config.extraPlugins = 'imageuploader';
-	console.log('I was called, yay!');
+  config.extraPlugins = 'imageuploader';
+
+  // Add Magento codes to protected codes.
+  config.protectedSource.push(/\{\{[\s\S]*?\}\}/g);
+  config.protectedSource.push(/\{\%[\s\S]*?%\}/g);
+
+  // Don'e encode properties, otherwise magento codes may get invalid
+  config.entities = false;
+
+  // Don't filter our content, we only use this inside our adminhtml so this should be safe
+  config.allowedContent = true;
 };
