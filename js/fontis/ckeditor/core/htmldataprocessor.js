@@ -86,6 +86,14 @@
 			// Encode them greedily. They will be unprotected right after getting HTML from fixBin. (#10)
 			data = protectInsecureAttributes( data );
 
+			// As most magento instances use " in their {{ }} Placeholders we need to fix this up
+      // Magento also supports ' for attributes within {{ }} Placeholders
+      // Thus we easily regexp and replace them. This should lead to a transparent
+      // conversion of all invalid HTML Attributes.
+      // If we won't do this the following HTML fixBin parsing would make
+      // attributes in HTML Tags invalid which contain {{ }} Placeholders with " arguments
+			data = fixMagentoPlaceholder(data);
+
 			var fixBin = evtData.context || editor.editable().getName(),
 				isPre;
 
@@ -789,9 +797,9 @@
 		// while greedy match returns:
 		//
 		// 	'data-x' => '&lt;a href=&quot;X&quot;'
-		//
+		//\
 		// which, can be easily filtered out (#11508).
-		protectAttributeRegex = /([\w-:]+)\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|(?:[^ "'>]+))/gi,
+		protectAttributeRegex = /([\w-:]+)\s*=\s*(?:(?:"([^"]*?{{.*?}}[^"]*?)")|(?:"[^"]*")|(?:'[^']*')|(?:[^ "'>]+))/gi,
 		protectAttributeNameRegex = /^(href|src|name)$/i;
 
 		// Note: we use lazy star '*?' to prevent eating everything up to the last occurrence of </style> or </textarea>.
@@ -866,6 +874,12 @@
 	function protectInsecureAttributes( html ) {
 		return html.replace( /([^a-z0-9<\-])(on\w{3,})(?!>)/gi, '$1data-cke-' + CKEDITOR.rnd + '-$2' );
 	}
+
+	function fixMagentoPlaceholder( html ) {
+	  return html.replace(/({{[^}]*?"[^}]*?}})/g, function(match){
+      return match.replace(/"/g, "'");
+    });
+  }
 
 	function unprotectRealComments( html ) {
 		return html.replace( /<!--\{cke_protected\}\{C\}([\s\S]+?)-->/g, function( match, data ) {
