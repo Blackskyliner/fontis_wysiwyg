@@ -15,18 +15,6 @@ CKEDITOR.editorConfig = function( config ) {
   // config.uiColor = '#AADC6E';
   config.extraPlugins = 'imageuploader';
 
-  // Add Magento codes to protected codes.
-  // config.protectedSource.push( /\{[\s\S]*?\}/g );
-  //config.protectedSource.push(/{{[^}]*?}}/g);
-  //config.protectedSource.push(/{%[^%]*?%}/g);
-
-  // config.removePlugins = 'htmldataprocessor';
-  // <(?:(?:\/([^>]+)>)|(?:!--([\S|\s]*?)-->)|(?:([^\/\s>]+)((?:\s+[\w\-:.]+(?:\s*=\s*?(?:(?:"[^"]*")|(?:'[^']*')|[^\s"'\/>]+))?)*)[\S\s]*?(\/?)>))
-  //                                                             /([\w\-:.]+)(?:(?:\s*=\s*(?:(?:"([^"]*)")|(?:'([^']*)')|([^\s>]+)))|(?=\s|$))/g
-
-  // <(?:(?:\/([^>]+)>)|(?:!--([\S|\s]*?)-->)|(?:([^\/\s>]+)((?:\s+[\w\-:.]+(?:\s*=\s*?(?:(?:"(?:[^"]*?{{.*?}}[^"]*?)")|(?:"[^"]*")|(?:'[^']*')|[^\s"'\/>]+))?)*)[\S\s]*?(\/?)>))
-  //                                                             /([\w\-:.]+)(?:(?:\s*=\s*(?:(?:"([^"]*?{{.*?}}[^"]*?)")|(?:"([^"]*)")|(?:'([^']*)')|([^\s>]+)))|(?=\s|$))/g
-
   // Don'e encode properties, otherwise magento codes may get invalid
   config.entities = false;
 
