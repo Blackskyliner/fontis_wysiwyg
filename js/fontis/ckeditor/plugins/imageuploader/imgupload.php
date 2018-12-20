@@ -35,7 +35,7 @@ $target_dir = $useruploadpath;
 $ckpath = isset($pluginConfiguration) && $pluginConfiguration ? $pluginConfiguration['upload_dir_public'] : "ckeditor/plugins/imageuploader/$useruploadpath";
 $randomLetters = $rand = substr(md5(microtime()),rand(0,26),6);
 $imgnumber = count(scandir($target_dir));
-$filename = "$imgnumber$randomLetters.$ext";
+$filename = str_pad($imgnumber, 4, '0', STR_PAD_LEFT).' - '.basename($_FILES['upload']['name']).'.'.$ext;
 $target_file = $target_dir . $filename;
 $ckfile = $ckpath . $filename;
 $uploadOk = 1;
