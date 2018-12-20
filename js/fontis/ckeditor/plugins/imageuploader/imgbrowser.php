@@ -60,19 +60,6 @@ require(__DIR__ . '/function.php');
     <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
     
     <script src="function.js"></script>
-    
-    <script>
-        // Will fail because CORS, thats why I disabled it. 
-        // Plugin version
-        //var currentpluginver = "<?php echo $currentpluginver; ?>";
-        // ajax request to register the plugin for better support
-        /*$.ajax({
-          method: "POST",
-          url: "http://ibm.bplaced.com/imageuploader/register.php",
-          data: { root: "<?php echo $root; ?>", link: "<?php echo $link; ?>", ver: ""+ currentpluginver +"" }
-        })*/
-    </script>
-    
 </head>
 <body ontouchstart="">
     
