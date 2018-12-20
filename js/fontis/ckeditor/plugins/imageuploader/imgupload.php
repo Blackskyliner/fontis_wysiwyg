@@ -41,7 +41,11 @@ $ckfile = $ckpath . $filename;
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
-$check = getimagesize($_FILES["upload"]["tmp_name"]);
+if($imageFileType != "pdf"){
+	$check = getimagesize($_FILES["upload"]["tmp_name"]);
+}else{
+	$check = true;
+}
 if($check !== false) {
     $uploadOk = 1;
 } else {
@@ -60,7 +64,7 @@ if ($_FILES["upload"]["size"] > file_upload_max_size()) {
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" && $imageFileType != "ico" ) {
+&& $imageFileType != "gif" && $imageFileType != "ico" && $imageFileType != "pdf" ) {
     echo "<script>alert('".$uploadimgerrors4."');</script>";
     $uploadOk = 0;
 }
