@@ -82,7 +82,7 @@ if(isset($_SESSION['username'])){
 $currentpluginver = "4.1.8";
 
 // Show/Hide the settings button
-$show_settings = true;
+$show_settings = false;
 
 // username and password
 $username = "";
@@ -138,11 +138,7 @@ if(!isset($_COOKIE["file_extens"])){
 }
 
 // show/hide news section
-if(!isset($_COOKIE["show_news"])){
-    $news_sction = "yes";
-} else {
-    
-}
+$news_sction = "no";
 
 // file_style
 if(!isset($_COOKIE["file_style"])){
