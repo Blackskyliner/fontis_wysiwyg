@@ -154,11 +154,10 @@ if(!isset($_COOKIE["file_style"])){
 // Path to the upload folder, please set the path using the Image Browser Settings menu.
 
 $foldershistory = array();
-$useruploadroot = "http://".$_SERVER['HTTP_HOST'];
+$useruploadroot = "//".$_SERVER['HTTP_HOST'];
 $browserfolder = pathinfo($_SERVER['REQUEST_URI']);
 $browserfolder = ltrim($browserfolder["dirname"], '/');
 $usersiteroot = substr($_SERVER["SCRIPT_FILENAME"], 0, (stripos($_SERVER["SCRIPT_FILENAME"], $_SERVER["SCRIPT_NAME"])+1));
-
 $useruploadfolder = "$browserfolder/uploads";
 $useruploadpath = $usersiteroot."$useruploadfolder/";
 $foldershistory[] = $useruploadfolder;

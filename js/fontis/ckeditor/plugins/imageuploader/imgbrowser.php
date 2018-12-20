@@ -9,8 +9,8 @@ session_start();
 <?php
 
 // Don't remove the following two rows
-$link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$root = "http://$_SERVER[HTTP_HOST]";
+$link = "//$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$root = "//$_SERVER[HTTP_HOST]";
 
 // checking lang value
 if(isset($_COOKIE['sy_lang'])) {
@@ -51,8 +51,8 @@ require(__DIR__ . '/function.php');
     
     <link rel="stylesheet" href="styles.css">
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://www.maleck.org/imageuploader/plugininfo.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//www.maleck.org/imageuploader/plugininfo.js"></script>
     <script src="dist/jquery.lazyload.min.js"></script>
     <script src="dist/js.cookie-2.0.3.min.js"></script>
     
@@ -77,7 +77,7 @@ require(__DIR__ . '/function.php');
 <body ontouchstart="">
     
 <div id="header">
-    <a class="" href="http://imageuploaderforckeditor.altervista.org/" target="_blank"><img src="img/cd-icon-image.png" class="headerIconLogo"></a>
+    <a class="" href="//imageuploaderforckeditor.altervista.org/" target="_blank"><img src="img/cd-icon-image.png" class="headerIconLogo"></a>
     <img onclick="Cookies.remove('qEditMode');window.close();" src="img/cd-icon-close-grey.png" class="headerIconRight iconHover">
     <img onclick="reloadImages();" src="img/cd-icon-refresh.png" class="headerIconRight iconHover">
     <img onclick="uploadImg();" src="img/cd-icon-upload-grey.png" class="headerIconCenter iconHover">
@@ -168,9 +168,9 @@ require(__DIR__ . '/function.php');
         <br><h3 class="settingsh3"><?php echo $panelsettings4; ?></h3>
         <!--Hide/show news section-->
         <?php if($news_sction == "yes"){ ?>
-            <p class="uploadP" onclick="disableNews()"><img src="http://www.maleck.org/imageuploader/img/hide.png" class="headerIcon"> <?php echo $panelsettings21; ?></p>
+            <p class="uploadP" onclick="disableNews()"><img src="//www.maleck.org/imageuploader/img/hide.png" class="headerIcon"> <?php echo $panelsettings21; ?></p>
         <?php } elseif($news_sction == "no") { ?>
-            <p class="uploadP" onclick="enableNews()"><img src="http://www.maleck.org/imageuploader/img/show.png" class="headerIcon"> <?php echo $panelsettings22; ?></p>
+            <p class="uploadP" onclick="enableNews()"><img src="//www.maleck.org/imageuploader/img/show.png" class="headerIcon"> <?php echo $panelsettings22; ?></p>
         <?php } ?>
         <!--Hide/show file extension-->
         <?php if($file_extens == "yes"){ ?>
@@ -187,7 +187,7 @@ require(__DIR__ . '/function.php');
             <!--logout-->
             <p class="uploadP" onclick="logOut();"><img src="img/cd-icon-logout.png" class="headerIcon"> <?php echo $panelsettings8; ?></p>
             <!--disable password-->
-            <p class="uploadP" onclick="window.open('http://imageuploaderforckeditor.altervista.org/disable_pw.html','about:blank', 'toolbar=no, scrollbars=yes, resizable=no, width=900, height=600');"><img src="img/cd-icon-disable.png" class="headerIcon"> <?php echo $panelsettings9; ?></p>
+            <p class="uploadP" onclick="window.open('//imageuploaderforckeditor.altervista.org/disable_pw.html','about:blank', 'toolbar=no, scrollbars=yes, resizable=no, width=900, height=600');"><img src="img/cd-icon-disable.png" class="headerIcon"> <?php echo $panelsettings9; ?></p>
         <?php } ?>
 
         <br><h3 class="settingsh3"><?php echo $panelsettings10; ?></h3>
@@ -196,9 +196,9 @@ require(__DIR__ . '/function.php');
 
         <br><h3 class="settingsh3"><?php echo $panelsettings12; ?></h3>
         <!--FAQ button-->
-        <p class="uploadP" onclick="window.open('http://imageuploaderforckeditor.altervista.org/support/','_blank');"><img src="img/cd-icon-faq.png" class="headerIcon"> <?php echo $panelsettings13; ?></p>
+        <p class="uploadP" onclick="window.open('//imageuploaderforckeditor.altervista.org/support/','_blank');"><img src="img/cd-icon-faq.png" class="headerIcon"> <?php echo $panelsettings13; ?></p>
         <!--report a bug-->
-        <p class="uploadP" onclick="window.open('http://ibm.bplaced.com/contact/index.php?cdproject=Image%20Uploader%20and%20Browser%20for%20CKEditor&cdlink=<?php echo $link; ?>&cdver='+currentpluginver,'_blank');"><img src="img/cd-icon-bug.png" class="headerIcon"> <?php echo $panelsettings14; ?></p>
+        <p class="uploadP" onclick="window.open('//ibm.bplaced.com/contact/index.php?cdproject=Image%20Uploader%20and%20Browser%20for%20CKEditor&cdlink=<?php echo $link; ?>&cdver='+currentpluginver,'_blank');"><img src="img/cd-icon-bug.png" class="headerIcon"> <?php echo $panelsettings14; ?></p>
 
         <br><h3 class="settingsh3"><?php echo $panelsettings15; ?></h3>
         <!--current version-->
